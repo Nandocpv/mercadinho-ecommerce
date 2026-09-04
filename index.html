@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mercadinho da Vila | Produtos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="logo"><span>MV</span><div><strong>Mercadinho</strong><small>DA VILA</small></div></div>
+      <nav>
+        <a href="#inicio">⌂ <span>Visão geral</span></a>
+        <a class="active" href="#produtos">▦ <span>Produtos</span><b id="productCount">0</b></a>
+        <a href="#categorias">◈ <span>Categorias</span></a>
+        <a href="#pedidos">◷ <span>Pedidos</span><b>12</b></a>
+      </nav>
+      <div class="side-footer"><div class="store-status"><i></i><div><strong>Loja aberta</strong><small>Segunda a sábado · 08h–20h</small></div></div><div class="user"><span>FO</span><div><strong>Fernando Orlando</strong><small>Administrador</small></div></div></div>
+    </aside>
+    <main id="inicio">
+      <header><div class="crumb">Início <span>/</span> <strong>Produtos</strong></div><div class="header-actions"><button aria-label="Notificações">♢</button><span class="date">03 de setembro de 2026</span><span class="header-avatar">FO</span></div></header>
+      <section class="intro"><div><p class="label">CATÁLOGO DA LOJA</p><h1>Produtos</h1><p class="sub">Cadastre e organize os produtos do seu mercadinho.</p></div><button class="primary" id="openForm">＋ Adicionar produto</button></section>
+      <section class="metrics"><div><span class="metric-icon green">▦</span><small>Produtos cadastrados</small><strong id="metricProducts">0</strong></div><div><span class="metric-icon orange">◉</span><small>Estoque baixo</small><strong>4</strong></div><div><span class="metric-icon purple">R$</span><small>Valor em estoque</small><strong>R$ 8.420</strong></div></section>
+      <section class="panel" id="produtos"><div class="panel-top"><div><h2>Seu catálogo</h2><p>Adicione produtos para disponibilizar no seu estoque.</p></div><div class="search"><span>⌕</span><input id="search" placeholder="Buscar produto..."></div></div><div class="category-tabs"><button class="selected" data-category="Todos">Todos <b id="allCount">0</b></button><button data-category="Bebidas">Bebidas</button><button data-category="Mercearia">Mercearia</button><button data-category="Hortifruti">Hortifruti</button><button data-category="Limpeza">Limpeza</button></div><div class="empty" id="empty"><div>🛒</div><h3>Nenhum produto cadastrado</h3><p>Comece adicionando os produtos vendidos no seu mercadinho.</p><button class="primary" id="emptyButton">Adicionar primeiro produto</button></div><div class="product-grid" id="productGrid"></div></section>
+    </main>
+  </div>
+  <div class="modal-backdrop" id="modal" aria-hidden="true"><div class="modal"><button class="close" id="close" aria-label="Fechar">×</button><p class="label">NOVO ITEM</p><h2>Adicionar produto</h2><p class="sub">Preencha os dados para cadastrar um produto no catálogo.</p><form id="productForm"><label>Nome do produto<input name="name" required placeholder="Ex.: Arroz branco 5kg"></label><div class="row"><label>Preço (R$)<input name="price" type="number" min="0.01" step="0.01" required placeholder="0,00"></label><label>Estoque<input name="stock" type="number" min="0" step="1" required placeholder="0"></label></div><label>Categoria<select name="category"><option>Bebidas</option><option>Mercearia</option><option>Hortifruti</option><option>Limpeza</option></select></label><label>Emoji do produto<input name="emoji" maxlength="2" placeholder="📦"></label><button class="primary full" type="submit">Salvar produto</button></form></div></div>
+  <script src="script.js"></script>
+</body>
+</html>
