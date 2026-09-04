@@ -8,6 +8,20 @@ CORS(app)
 products = []
 _next_id = 1
 
+# Load seed products from data/products.json when available
+seed_file = os.path.join(os.path.dirname(__file__), 'data', 'products.json')
+if os.path.exists(seed_file):
+    try:
+        import json
+        with open(seed_file, 'r', encoding='utf-8') as f:
+            seed = json.load(f)
+            if isinstance(seed, list) and seed:
+                products = seed
+                _next_id = max((int(p.get('id', 0)) for p in products), default=0) + 1
+    except Exception:
+        # If seeding fails, continue with empty list
+        pass
+
 @app.route('/api/products', methods=['GET'])
 def get_products():
     return jsonify(products)

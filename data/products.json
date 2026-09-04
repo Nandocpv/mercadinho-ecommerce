@@ -1,0 +1,14 @@
+[
+  {"id": 1, "name": "Arroz Tio João 5kg", "price": 29.90, "stock": 20, "category": "Mercearia", "emoji": "🍚"},
+  {"id": 2, "name": "Feijão Kicaldo 1kg", "price": 9.50, "stock": 30, "category": "Mercearia", "emoji": "🥫"},
+  {"id": 3, "name": "Açúcar União 1kg", "price": 4.80, "stock": 50, "category": "Mercearia", "emoji": "🍬"},
+  {"id": 4, "name": "Leite Itambé 1L", "price": 4.50, "stock": 40, "category": "Bebidas", "emoji": "🥛"},
+  {"id": 5, "name": "Óleo Soya 900ml", "price": 8.90, "stock": 25, "category": "Mercearia", "emoji": "🫒"},
+  {"id": 6, "name": "Refrigerante Coca-Cola 2L", "price": 9.99, "stock": 15, "category": "Bebidas", "emoji": "🥤"},
+  {"id": 7, "name": "Cerveja Skol 350ml (unit)", "price": 4.00, "stock": 48, "category": "Bebidas", "emoji": "🍺"},
+  {"id": 8, "name": "Banana Nanica (kg)", "price": 6.50, "stock": 40, "category": "Hortifruti", "emoji": "🍌"},
+  {"id": 9, "name": "Tomate (kg)", "price": 8.00, "stock": 30, "category": "Hortifruti", "emoji": "🍅"},
+  {"id": 10, "name": "Sabão em pó OMO 1kg", "price": 16.50, "stock": 12, "category": "Limpeza", "emoji": "🧼"},
+  {"id": 11, "name": "Detergente Ypê 500ml", "price": 3.99, "stock": 40, "category": "Limpeza", "emoji": "🧴"},
+  {"id": 12, "name": "Pão francês (dúzia)", "price": 10.00, "stock": 22, "category": "Mercearia", "emoji": "🥖"}
+]
