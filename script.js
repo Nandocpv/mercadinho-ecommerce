@@ -35,10 +35,26 @@ document.querySelectorAll('.category-tabs button').forEach((button) => button.ad
   category = button.dataset.category;
   render();
 }));
-form.addEventListener('submit', (event) => {
+form.addEventListener('submit', async (event) => {
   event.preventDefault();
   const data = new FormData(form);
-  products.unshift({ name: data.get('name').trim(), price: Number(data.get('price')), stock: Number(data.get('stock')), category: data.get('category'), emoji: data.get('emoji') });
+  const newProduct = { name: data.get('name').trim(), price: Number(data.get('price')), stock: Number(data.get('stock')), category: data.get('category'), emoji: data.get('emoji') };
+  try {
+    const res = await fetch('/api/products', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(newProduct)
+    });
+    if (res.ok) {
+      const saved = await res.json();
+      products.unshift(saved);
+    } else {
+      products.unshift(newProduct);
+    }
+  } catch (e) {
+    // If backend is not available, fallback to localStorage only
+    products.unshift(newProduct);
+  }
   localStorage.setItem('mercadinho-products', JSON.stringify(products));
   form.reset();
   toggleModal(false);
